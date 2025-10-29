@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌍 Mujtama Global Website
 
-## Getting Started
+The official website of **Mujtama Global** — connecting communities, mosques, and charitable events through a modern digital experience.
 
-First, run the development server:
+---
+
+## 🚀 Overview
+
+The **Mujtama Global Website** is the primary digital platform showcasing the organization’s mission, connecting users to nearby mosques, ongoing events, and community-driven initiatives.
+
+---
+
+## 🏠 Main Sections
+
+- 🖥️ **Landing Page** – Highlights Mujtama Global’s vision and activities
+- 👥 **About Us** – Learn about our journey, goals, and team
+- ✉️ **Contact** – Reach out for inquiries, feedback, or collaborations
+
+---
+
+## 🕌 Mosque Section
+
+Stay connected to your local community with detailed mosque insights.
+
+| Feature               | Description                                |
+| --------------------- | ------------------------------------------ |
+| 🧭 **Nearby Mosques** | Explore mosques near your current location |
+| 💰 **Finances**       | View transparent financial details         |
+| 🕋 **Prayer Times**   | Accurate and up-to-date Salah timings      |
+| 📅 **Ongoing Events** | Track current community happenings         |
+| ❤️ **Charity Events** | Participate in donation and social drives  |
+
+---
+
+## 🧠 Tech Stack
+
+| Technology         | Purpose                                           |
+| ------------------ | ------------------------------------------------- |
+| ⚛️ **React 19**    | Modern UI library for building dynamic interfaces |
+| ⛓️ **Next.js 15**  | Full-stack React framework for routing & SSR      |
+| 🟦 **TypeScript**  | Type-safe JavaScript for robust development       |
+| 🎨 **Sass (SCSS)** | Clean, modular, and scalable styling              |
+| ⚡ **Vite**        | Lightning-fast local development and builds       |
+| 🚀 **Turbopack**   | Next-gen bundler optimized for Next.js projects   |
+
+---
+
+## ⚙️ Installation & Setup
 
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/mujtama-global.git
+
+# Navigate into the project folder
+cd mujtama-global
+
+# Install dependencies
+npm install
+
+# Run the development server (Next.js)
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# OR if using Vite for isolated module development
+npm run vite
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open **http://localhost:3000** (Next.js) or **http://localhost:5173** (Vite) in your browser 🚀
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📸 Previews
 
-## Learn More
+### 🏠 Landing Page
 
-To learn more about Next.js, take a look at the following resources:
+_(Add a screenshot here)_
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🕌 Mosque Dashboard
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+_(Add a screenshot here)_
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🤝 Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+We welcome contributions from the community!
+
+To contribute:
+
+1. Fork this repository
+2. Create a new feature branch
+3. Commit your changes
+4. Open a pull request 🎉
+
+---
+
+## 🧾 License
+
+Licensed under the **MIT License** — free for personal and commercial use.
+
+---
+
+### 💫 Built with ❤️ by the Mujtama Global Team
