@@ -1,0 +1,23 @@
+@import "../../DS/base/colors";
+.root {
+  padding: 17.5px 5%;
+  background-color: $primay-background;
+  display: flex;
+  > div {
+    flex: 1;
+  }
+  .links {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    a {
+      text-align: center;
+      text-decoration: none;
+      color: $light-text;
+      &.active {
+        color: $black-text;
+        font-weight: 700;
+      }
+    }
+  }
+}

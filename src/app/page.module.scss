@@ -1,0 +1,28 @@
+@import "../DS/base/colors";
+.root {
+  padding: 85px 5%;
+  .title {
+    font-weight: 700;
+    max-width: 40%;
+    font-size: 48px;
+    line-height: 125%;
+    color: $primary-text;
+  }
+  .features {
+    margin-top: 40px;
+    max-width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    .feature {
+      padding: 10px 16px;
+      border: 1px solid $light-border;
+      border-radius: 25px;
+
+      font-weight: 500;
+      font-size: 14px;
+
+      color: $light-text;
+    }
+  }
+}
