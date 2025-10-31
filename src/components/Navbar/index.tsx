@@ -4,26 +4,31 @@ import { usePathname } from "next/navigation";
 import s from "./Navbar.module.scss";
 
 export default function Navbar() {
-  const pathname = usePathname(); // ✅ works on the server now
+  const pathname = usePathname();
+
+  const NAV_ITEMS = [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
+  ];
 
   return (
-    <div className={s.root}>
-      <div></div>
+    <nav className={s.root}>
+      <div className={s.logo}>🕌 Mujtama</div>
       <div className={s.links}>
-        <Link href="/" className={pathname === "/" ? s.active : ""}>
-          Home
-        </Link>
-        <Link href="/about" className={pathname === "/about" ? s.active : ""}>
-          About
-        </Link>
-        <Link
-          href="/contact"
-          className={pathname === "/contact" ? s.active : ""}
-        >
-          Contact
-        </Link>
+        {NAV_ITEMS.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className={`${s.link} ${pathname === item.href ? s.active : ""}`}
+          >
+            {item.label}
+          </Link>
+        ))}
       </div>
-      <div />
-    </div>
+      <div className={s.cta}>
+        <button className={s.joinBtn}>Join Now</button>
+      </div>
+    </nav>
   );
 }
