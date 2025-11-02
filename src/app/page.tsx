@@ -8,6 +8,13 @@ import MosqueIcon from "@/assets/icons/Mosque.svg";
 import TimeIcon from "@/assets/icons/Time.svg";
 import FastIcon from "@/assets/icons/Fast.svg";
 import ProfileIcon from "@/assets/icons/Profile.svg";
+// Feature
+import Calculator from "@/assets/features/Calculator.svg";
+import AI from "@/assets/features/AI.svg";
+import CrowdSource from "@/assets/features/CrowdSource.svg";
+import QiblaDirection from "@/assets/features/QiblaDirection.svg";
+import Quran from "@/assets/features/Quran.svg";
+import Audio from "@/assets/features/Audio.svg";
 
 const FEATURES = [
   { label: "Real-Time Salah Tracker", icon: SalahIcon },
@@ -153,6 +160,21 @@ export const SALAH_SCREEN_OVERVIEW = {
       description:
         "The current date is highlighted so you always know which day you’re logging for.",
     },
+  ],
+};
+
+const UPCOMING_FEATURES = {
+  title: "Upcoming Features",
+  features: [
+    {
+      label: "Qibla",
+      icon: QiblaDirection,
+    },
+    { label: "Iqra AI", icon: AI },
+    { label: "Zakat Calculator", icon: Calculator },
+    { label: "Fundraiser Drive", icon: CrowdSource },
+    { label: "Hadith", icon: Quran },
+    { label: "Audiobook", icon: Audio },
   ],
 };
 
@@ -320,6 +342,26 @@ const HomePage = () => {
             alt={MY_MOSQUE_SCREEN_OVERVIEW.title}
             className={s.overviewImage}
           />
+        </div>
+      </section>
+      {/* Upcoming Features */}
+      <section className={s.upcomingFeatures}>
+        <p className={s.title}>Upcoming Features</p>
+        <div className={s.features}>
+          {UPCOMING_FEATURES.features.map((feature) => (
+            <div key={feature.label} className={s.feature}>
+              <div className={s.imageContainer}>
+                <Image
+                  src={feature.icon}
+                  height={80}
+                  width={80}
+                  alt={feature.label}
+                />
+              </div>
+
+              <span className={s.featureLabel}>{feature.label}</span>
+            </div>
+          ))}
         </div>
       </section>
     </div>
