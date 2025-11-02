@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import s from "./Navbar.module.scss";
+import Image from "next/image";
+import PlayStoreButtton from "../PlayStoreButton";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -27,7 +29,7 @@ export default function Navbar() {
         ))}
       </div>
       <div className={s.cta}>
-        <button className={s.joinBtn}>Join Now</button>
+        <PlayStoreButtton />
       </div>
     </nav>
   );

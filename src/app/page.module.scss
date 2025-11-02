@@ -1,18 +1,45 @@
 @import "../DS/base/colors";
 
+.taglineSection {
+  text-align: center;
+
+  margin-bottom: 20px;
+  button {
+    margin-top: 32px;
+  }
+}
 .root {
   padding: 80px 5%;
-
   font-family: "Inter", sans-serif;
 
   overflow-x: hidden;
+  .mainTitle {
+    font-size: 62px;
+    color: $primary-text;
+    margin-bottom: 32px;
+  }
+  .subTitle {
+    color: $black-text;
+    font-size: 20px;
+    letter-spacing: 0.15px;
+    margin-bottom: 4px;
+  }
+
+  .textLead {
+    color: $light-text;
+    font-weight: lighter;
+    letter-spacing: 0.15px;
+    line-height: 150%;
+  }
   .upcomingFeatures {
+    text-align: center;
     margin-top: 110px;
     .title {
       text-align: center;
       font-size: 48px;
       color: $primary-text;
       margin-bottom: 32px;
+      font-weight: normal;
     }
     .features {
       text-align: center;
@@ -32,6 +59,7 @@
           justify-content: center;
           align-items: center;
           border-radius: 50%;
+          margin-bottom: 16px;
         }
         .featureLabel {
           display: inline-block;
@@ -40,6 +68,29 @@
           font-size: 18px;
         }
       }
+    }
+  }
+
+  .whyUs {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    .image {
+      border-radius: 50%;
+    }
+    margin-top: 120px;
+
+    .title {
+      font-size: 48px;
+      color: $primary-text;
+      margin-bottom: 16px;
+    }
+    .description {
+      color: $light-text;
+      margin: 0 auto;
+      color: $light-text;
+      font-size: 18px;
+      line-height: 1.6;
     }
   }
 }
@@ -58,22 +109,6 @@
     min-width: 300px;
     max-width: 50%;
     animation: fadeInUp 0.6s ease forwards;
-  }
-
-  .title {
-    font-weight: 800;
-    font-size: 64px;
-    line-height: 1.15;
-    letter-spacing: 2px;
-    color: $primary-text;
-  }
-
-  .subtitle {
-    margin-top: 20px;
-    font-size: 18px;
-    line-height: 1.7;
-    color: $light-text;
-    max-width: 85%;
   }
 
   .features {
@@ -128,29 +163,6 @@
   max-width: 1100px;
   margin: 0 auto;
   text-align: center;
-
-  h3 {
-    font-size: 48px;
-    font-weight: 700;
-  }
-
-  p {
-    color: $light-text;
-    margin-top: 12px;
-    margin-bottom: 40px;
-    font-size: 17px;
-  }
-
-  h4 {
-    font-size: 22px;
-    font-weight: 600;
-    margin-top: 40px;
-    color: $primary-text;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: center;
-  }
-
   .cards {
     display: flex;
     flex-wrap: wrap;
@@ -164,7 +176,7 @@
       border: 1px solid rgba(0, 0, 0, 0.05);
       border-radius: 20px;
       padding: 26px;
-      text-align: left;
+      text-align: center;
       transition: all 0.35s ease;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 
@@ -182,22 +194,6 @@
         &:hover {
           transform: scale(1.05);
         }
-      }
-
-      h5 {
-        font-size: 18px;
-        font-weight: 600;
-        color: $black-text;
-        text-align: center;
-        margin-bottom: 10px;
-      }
-
-      p {
-        color: $light-text;
-        font-size: 14px;
-        line-height: 140%;
-        letter-spacing: 0.5px;
-        text-align: justify;
       }
     }
   }
@@ -221,7 +217,7 @@
   .overviewTitle {
     font-size: 34px;
     font-weight: 400;
-    color: $black-text;
+    color: $primary-text;
     font-weight: no;
     letter-spacing: 1px;
     margin-bottom: 6px;
@@ -325,4 +321,24 @@
 .cardImage {
   width: 100%;
   height: auto;
+}
+
+.taglineSection {
+  margin-top: 40px;
+  text-align: center;
+
+  .taglineTitle {
+    text-align: center;
+    font-size: 48px;
+    color: $primary-text;
+    margin-bottom: 32px;
+  }
+
+  .taglineDescription {
+    color: $light-text;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+  }
 }

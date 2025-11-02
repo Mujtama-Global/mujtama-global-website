@@ -1,0 +1,20 @@
+@import "../../DS/base/colors";
+.footer {
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primay-background;
+  color: $primary-text;
+  font-weight: bold;
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+
+    gap: 24px;
+    li {
+    }
+  }
+}

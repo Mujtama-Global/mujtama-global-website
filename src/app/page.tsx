@@ -8,14 +8,18 @@ import MosqueIcon from "@/assets/icons/Mosque.svg";
 import TimeIcon from "@/assets/icons/Time.svg";
 import FastIcon from "@/assets/icons/Fast.svg";
 import ProfileIcon from "@/assets/icons/Profile.svg";
-// Feature
+
+// Feature Icons
 import Calculator from "@/assets/features/Calculator.svg";
 import AI from "@/assets/features/AI.svg";
 import CrowdSource from "@/assets/features/CrowdSource.svg";
 import QiblaDirection from "@/assets/features/QiblaDirection.svg";
 import Quran from "@/assets/features/Quran.svg";
 import Audio from "@/assets/features/Audio.svg";
+import PlayStoreButtton from "@/components/PlayStoreButton";
+import Head from "next/head";
 
+// ---------- DATA ----------
 const FEATURES = [
   { label: "Real-Time Salah Tracker", icon: SalahIcon },
   { label: "Nearby Mosques", icon: MosqueIcon },
@@ -54,6 +58,7 @@ const KEY_FEATURES = [
   },
 ];
 
+// COMBINED APP SCREENS OVERVIEW
 const HOME_SCREEN_OVERVIEW = {
   title: "Home Screen Overview",
   description:
@@ -83,7 +88,6 @@ const HOME_SCREEN_OVERVIEW = {
     },
   ],
 };
-
 export const MASJID_DETAIL_OVERVIEW = {
   title: "Masjid Detail Screen Overview",
   image:
@@ -132,7 +136,6 @@ export const MY_MOSQUE_SCREEN_OVERVIEW = {
   image:
     "https://www.mujtamaglobal.com/assets/images/masjid-detail-screen-overview-image.png",
 };
-
 export const SALAH_SCREEN_OVERVIEW = {
   title: "Salah Tracker Screen Overview",
   description:
@@ -162,14 +165,16 @@ export const SALAH_SCREEN_OVERVIEW = {
     },
   ],
 };
-
+const OVERVIEWS = [
+  HOME_SCREEN_OVERVIEW,
+  MASJID_DETAIL_OVERVIEW,
+  MY_MOSQUE_SCREEN_OVERVIEW,
+  SALAH_SCREEN_OVERVIEW,
+];
 const UPCOMING_FEATURES = {
   title: "Upcoming Features",
   features: [
-    {
-      label: "Qibla",
-      icon: QiblaDirection,
-    },
+    { label: "Qibla", icon: QiblaDirection },
     { label: "Iqra AI", icon: AI },
     { label: "Zakat Calculator", icon: Calculator },
     { label: "Fundraiser Drive", icon: CrowdSource },
@@ -178,193 +183,184 @@ const UPCOMING_FEATURES = {
   ],
 };
 
+const WHY_US = {
+  image: "https://www.mujtamaglobal.com/assets/images/chose-us-cta-image.png",
+  title: "Why Choose Us",
+  description:
+    "At the heart of Mujtama is a vision to bridge tradition with innovation. Our team is dedicated to integrating modern technology and AI to enhance the way Muslims around the world engage with their faith. From smarter mosque connectivity to intelligent spiritual tools, we aim to build a digital ecosystem that empowers individuals and strengthens communities—now and for the future.",
+};
+
+// ---------- COMPONENTS ----------
+const TaglineSection = () => (
+  <div className={s.taglineSection}>
+    <p className={s.mainTitle}>Faith Meets Convenience</p>
+    <p className={s.textLead}>
+      Stay connected to your faith wherever you are, whenever you need.
+    </p>
+    <PlayStoreButtton />
+  </div>
+);
+
 const HomePage = () => {
+  const pageTitle = "Mujtama Global | Your All-in-One Islamic Companion";
+  const pageDescription =
+    "Stay connected to your faith with Mujtama Global — track Salah, find nearby mosques, read Quran, and access authentic duas all in one Islamic app.";
+
   return (
-    <div className={s.root}>
-      {/* ---------- HERO ---------- */}
-      <section className={s.hero}>
-        <div className={s.content}>
-          <h1 className={s.title}>
-            Your All In One <br /> Islamic Companion
-          </h1>
-          <p className={s.subtitle}>
-            Mujtama Global helps Muslims stay connected to their faith — with
-            real-time Salah tracking, accurate prayer times, and nearby mosque
-            locations wherever you are.
-          </p>
-          <div className={s.features}>
-            {FEATURES.map((feature) => (
-              <span key={feature.label} className={s.feature}>
+    <>
+      {/* SEO Head Tags */}
+      <Head>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta
+          name="keywords"
+          content="Islamic app, Salah tracker, prayer times, Quran, nearby mosques, dua, Muslim community, Mujtama"
+        />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta
+          property="og:image"
+          content="https://www.mujtamaglobal.com/assets/images/hero-image.png"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.mujtamaglobal.com" />
+        <link rel="canonical" href="https://www.mujtamaglobal.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+
+      <main className={s.root}>
+        {/* ---------- HERO ---------- */}
+        <header className={s.hero}>
+          <div className={s.content}>
+            <h1 className={s.mainTitle}>
+              Your All In One <br /> Islamic Companion
+            </h1>
+            <p className={s.textLead}>
+              Mujtama Global helps Muslims stay connected to their faith — with
+              real-time Salah tracking, accurate prayer times, and nearby mosque
+              locations wherever you are.
+            </p>
+
+            <div className={s.features} aria-label="Main features">
+              {FEATURES.map((feature) => (
+                <span key={feature.label} className={s.feature}>
+                  <Image
+                    src={feature.icon}
+                    alt={`${feature.label} icon`}
+                    width={18}
+                    height={18}
+                    className={s.heroImage}
+                  />
+                  {feature.label}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className={s.heroImageWrapper}>
+            <Image
+              src="https://www.mujtamaglobal.com/assets/images/hero-image.png"
+              width={380}
+              height={480}
+              alt="Mujtama Global app hero image showing Islamic features"
+              className={s.heroImage}
+              priority
+            />
+          </div>
+        </header>
+
+        <TaglineSection />
+
+        {/* ---------- KEY FEATURES ---------- */}
+        <section className={s.keyFeatures}>
+          <p className={s.mainTitle}>Explore Our Key Features</p>
+          <div className={s.cards}>
+            {KEY_FEATURES.map((item) => (
+              <article key={item.label} className={s.card}>
                 <Image
-                  src={feature.icon}
-                  alt={feature.label}
-                  width={18}
-                  height={18}
-                  className={s.heroImage}
+                  src={item.url}
+                  alt={`Feature - ${item.label}`}
+                  height={200}
+                  width={200}
+                  className={s.cardImage}
+                  loading="lazy"
                 />
-                {feature.label}
-              </span>
+                <h3 className={s.subTitle}>{item.label}</h3>
+                <p className={s.textLead}>{item.description}</p>
+              </article>
             ))}
           </div>
-        </div>
-        <div className={s.heroImageWrapper}>
-          <Image
-            src="https://www.mujtamaglobal.com/assets/images/hero-image.png"
-            width={380}
-            height={480}
-            alt="show-case-img"
-            className={s.heroImage}
-          />
-        </div>
-      </section>
+        </section>
 
-      {/* ---------- KEY FEATURES ---------- */}
-      <section className={s.keyFeatures}>
-        <h3>Faith Meets Convenience</h3>
-        <p>Stay connected to your faith wherever you are, whenever you need.</p>
-        <h4>Explore Our Key Features</h4>
-        <div className={s.cards}>
-          {KEY_FEATURES.map((item) => (
-            <div key={item.label} className={s.card}>
-              <Image
-                src={item.url}
-                alt={item.label}
-                height={200}
-                width={200}
-                className={s.cardImage}
-              />
-              <h5>{item.label}</h5>
-              <p>{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ---------- 1 ---------- */}
-      <section className={s.overview}>
-        <div className={s.content}>
-          <p className={s.overviewTitle}>{HOME_SCREEN_OVERVIEW.title}</p>
-          <p className={s.overviewDescription}>
-            {HOME_SCREEN_OVERVIEW.description}
-          </p>
-          <div className={s.overviewItems}>
-            {HOME_SCREEN_OVERVIEW.features.map(
-              ({ title, description }, index) => (
-                <div key={index} className={s.overviewItem}>
-                  <p className={s.itemTitle}>{title}</p>
-                  <p className={s.itemDescription}>{description}</p>
-                </div>
-              )
-            )}
-          </div>
-        </div>
-        <div className={s.imageContainer}>
-          <img
-            src={HOME_SCREEN_OVERVIEW.image}
-            alt={HOME_SCREEN_OVERVIEW.title}
-            className={s.overviewImage}
-          />
-        </div>
-      </section>
-      {/* ---------- 2 ---------- */}
-      <section className={s.overview}>
-        <div className={s.content}>
-          <p className={s.overviewTitle}>{MASJID_DETAIL_OVERVIEW.title}</p>
-          <p className={s.overviewDescription}>
-            {MASJID_DETAIL_OVERVIEW.description}
-          </p>
-          <div className={s.overviewItems}>
-            {MASJID_DETAIL_OVERVIEW.features.map(
-              ({ title, description }, index) => (
-                <div key={index} className={s.overviewItem}>
-                  <p className={s.itemTitle}>{title}</p>
-                  <p className={s.itemDescription}>{description}</p>
-                </div>
-              )
-            )}
-          </div>
-        </div>
-        <div className={s.imageContainer}>
-          <img
-            src={MASJID_DETAIL_OVERVIEW.image}
-            alt={MASJID_DETAIL_OVERVIEW.title}
-            className={s.overviewImage}
-          />
-        </div>
-      </section>
-      {/* ---------- 3 ---------- */}
-      <section className={s.overview}>
-        <div className={s.content}>
-          <p className={s.overviewTitle}>{SALAH_SCREEN_OVERVIEW.title}</p>
-          <p className={s.overviewDescription}>
-            {SALAH_SCREEN_OVERVIEW.description}
-          </p>
-          <div className={s.overviewItems}>
-            {SALAH_SCREEN_OVERVIEW.features.map(
-              ({ title, description }, index) => (
-                <div key={index} className={s.overviewItem}>
-                  <p className={s.itemTitle}>{title}</p>
-                  <p className={s.itemDescription}>{description}</p>
-                </div>
-              )
-            )}
-          </div>
-        </div>
-        <div className={s.imageContainer}>
-          <img
-            src={SALAH_SCREEN_OVERVIEW.image}
-            alt={SALAH_SCREEN_OVERVIEW.title}
-            className={s.overviewImage}
-          />
-        </div>
-      </section>
-      {/* ---------- 4 ---------- */}
-      <section className={s.overview}>
-        <div className={s.content}>
-          <p className={s.overviewTitle}>{MY_MOSQUE_SCREEN_OVERVIEW.title}</p>
-          <p className={s.overviewDescription}>
-            {MY_MOSQUE_SCREEN_OVERVIEW.description}
-          </p>
-          <div className={s.overviewItems}>
-            {MY_MOSQUE_SCREEN_OVERVIEW.features.map(
-              ({ title, description }, index) => (
-                <div key={index} className={s.overviewItem}>
-                  <p className={s.itemTitle}>{title}</p>
-                  <p className={s.itemDescription}>{description}</p>
-                </div>
-              )
-            )}
-          </div>
-        </div>
-        <div className={s.imageContainer}>
-          <img
-            src={MY_MOSQUE_SCREEN_OVERVIEW.image}
-            alt={MY_MOSQUE_SCREEN_OVERVIEW.title}
-            className={s.overviewImage}
-          />
-        </div>
-      </section>
-      {/* Upcoming Features */}
-      <section className={s.upcomingFeatures}>
-        <p className={s.title}>Upcoming Features</p>
-        <div className={s.features}>
-          {UPCOMING_FEATURES.features.map((feature) => (
-            <div key={feature.label} className={s.feature}>
-              <div className={s.imageContainer}>
-                <Image
-                  src={feature.icon}
-                  height={80}
-                  width={80}
-                  alt={feature.label}
-                />
+        {/* ---------- OVERVIEWS ---------- */}
+        {OVERVIEWS.map((overview, index) => (
+          <section key={index} className={s.overview}>
+            <div className={s.content}>
+              <p className={s.mainTitle}>{overview.title}</p>
+              <p className={s.textLead}>{overview.description}</p>
+              <div className={s.overviewItems}>
+                {overview.features.map(({ title, description }, i) => (
+                  <article key={i} className={s.overviewItem}>
+                    <h3 className={s.subTitle}>{title}</h3>
+                    <p className={s.textLead}>{description}</p>
+                  </article>
+                ))}
               </div>
-
-              <span className={s.featureLabel}>{feature.label}</span>
             </div>
-          ))}
-        </div>
-      </section>
-    </div>
+
+            <div className={s.imageContainer}>
+              <Image
+                src={overview.image}
+                alt={`${overview.title} illustration`}
+                className={s.overviewImage}
+                height={400}
+                width={500}
+                loading="lazy"
+              />
+            </div>
+          </section>
+        ))}
+
+        {/* ---------- UPCOMING FEATURES ---------- */}
+        <section className={s.upcomingFeatures}>
+          <p className={s.mainTitle}>Upcoming Features</p>
+          <div className={s.features}>
+            {UPCOMING_FEATURES.features.map((feature) => (
+              <div key={feature.label} className={s.feature}>
+                <div className={s.imageContainer}>
+                  <Image
+                    src={feature.icon}
+                    height={80}
+                    width={80}
+                    alt={`${feature.label} icon`}
+                    loading="lazy"
+                  />
+                </div>
+                <h3 className={s.subTitle}>{feature.label}</h3>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ---------- WHY US ---------- */}
+        <section className={s.whyUs}>
+          <Image
+            src={WHY_US.image}
+            height={600}
+            width={600}
+            className={s.image}
+            alt="Muslim community illustration showing unity and innovation"
+            loading="lazy"
+          />
+          <div>
+            <p className={s.mainTitle}>{WHY_US.title}</p>
+            <p className={s.textLead}>{WHY_US.description}</p>
+          </div>
+        </section>
+
+        <TaglineSection />
+      </main>
+    </>
   );
 };
 
