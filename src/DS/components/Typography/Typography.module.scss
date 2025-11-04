@@ -1,0 +1,41 @@
+@import "../../base/colors";
+
+// Sizes
+
+.textLg {
+  font-size: 24px;
+}
+.text2xl {
+  font-size: 62px;
+  margin-bottom: 32px;
+}
+
+.textBase {
+  font-size: 16px;
+}
+.textSm {
+  font-size: 12px;
+}
+
+// Colors
+.textPrimary {
+  color: $primary-text;
+}
+
+.textSecondary {
+  color: $light-text;
+}
+
+// Font Wights
+.fontNormal {
+  font-weight: normal;
+}
+.fontBold {
+  font-weight: bold;
+}
+.fontSemiBold {
+  font-weight: 500;
+}
+.fontLight {
+  font-weight: lighter;
+}

@@ -18,6 +18,7 @@ import Quran from "@/assets/features/Quran.svg";
 import Audio from "@/assets/features/Audio.svg";
 import PlayStoreButtton from "@/components/PlayStoreButton";
 import Head from "next/head";
+import Typography from "@/DS/components/Typography";
 
 // ---------- DATA ----------
 const FEATURES = [
@@ -232,9 +233,10 @@ const HomePage = () => {
         {/* ---------- HERO ---------- */}
         <header className={s.hero}>
           <div className={s.content}>
-            <h1 className={s.mainTitle}>
+            <p className={s.mainTitle}>
               Your All In One <br /> Islamic Companion
-            </h1>
+            </p>
+
             <p className={s.textLead}>
               Mujtama Global helps Muslims stay connected to their faith — with
               real-time Salah tracking, accurate prayer times, and nearby mosque
