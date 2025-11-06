@@ -9,9 +9,14 @@
   font-size: 62px;
   margin-bottom: 32px;
 }
+.textXl {
+  font-size: 20px;
+}
 
 .textBase {
   font-size: 16px;
+  line-height: 1.5em;
+  letter-spacing: 0.5px;
 }
 .textSm {
   font-size: 12px;
@@ -24,6 +29,9 @@
 
 .textSecondary {
   color: $light-text;
+}
+.textLight {
+  color: $white-text;
 }
 
 // Font Wights

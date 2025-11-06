@@ -9,6 +9,7 @@ export enum TextSize {
 
 export enum TextColor {
   Default = "default",
+  Light = "light",
   Primary = "primary",
   Secondary = "secondary",
   Tertiary = "tertiary",

@@ -40,6 +40,9 @@ const Typography = ({
     case TextColor.Default:
       colorClass = s.textDefault;
       break;
+    case TextColor.Light:
+      colorClass = s.textLight;
+      break;
     case TextColor.Primary:
       colorClass = s.textPrimary;
       break;
@@ -83,13 +86,14 @@ const Typography = ({
     default:
       fontSizeClass = s.textBase;
   }
+  console.log("style", style);
   return (
-    <div
+    <p
       className={[fontSizeClass, colorClass, fontWeightClass].join(" ")}
-      style={style}
+      style={{ ...style }}
     >
       {label}
-    </div>
+    </p>
   );
 };
 
