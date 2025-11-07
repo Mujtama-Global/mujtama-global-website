@@ -19,6 +19,7 @@ import Audio from "@/assets/features/Audio.svg";
 import PlayStoreButtton from "@/components/PlayStoreButton";
 import Head from "next/head";
 import Typography from "@/DS/components/Typography";
+import { FontWeight, TextColor, TextSize } from "@/DS/types/Typography";
 
 // ---------- DATA ----------
 const FEATURES = [
@@ -194,10 +195,20 @@ const WHY_US = {
 // ---------- COMPONENTS ----------
 const TaglineSection = () => (
   <div className={s.taglineSection}>
-    <p className={s.mainTitle}>Faith Meets Convenience</p>
-    <p className={s.textLead}>
-      Stay connected to your faith wherever you are, whenever you need.
-    </p>
+    <Typography
+      label="Faith Meets Convenience"
+      size={TextSize.DoubleExtraLarge}
+      fontWeight={FontWeight.Light}
+      color={TextColor.Primary}
+    />
+
+    <Typography
+      label="Stay connected to your faith wherever you are, whenever you need."
+      size={TextSize.Base}
+      fontWeight={FontWeight.Light}
+      color={TextColor.Secondary}
+    />
+
     <PlayStoreButtton />
   </div>
 );
@@ -233,15 +244,19 @@ const HomePage = () => {
         {/* ---------- HERO ---------- */}
         <header className={s.hero}>
           <div className={s.content}>
-            <p className={s.mainTitle}>
-              Your All In One <br /> Islamic Companion
-            </p>
+            <Typography
+              label="Your All In One Islamic Companion"
+              size={TextSize.DoubleExtraLarge}
+              fontWeight={FontWeight.Light}
+              color={TextColor.Primary}
+            />
 
-            <p className={s.textLead}>
-              Mujtama Global helps Muslims stay connected to their faith — with
-              real-time Salah tracking, accurate prayer times, and nearby mosque
-              locations wherever you are.
-            </p>
+            <Typography
+              label="Mujtama Global helps Muslims stay connected to their faith — with real-time Salah tracking, accurate prayer times, and nearby mosque locations wherever you are."
+              size={TextSize.Base}
+              fontWeight={FontWeight.Light}
+              color={TextColor.Secondary}
+            />
 
             <div className={s.features} aria-label="Main features">
               {FEATURES.map((feature) => (
@@ -253,7 +268,12 @@ const HomePage = () => {
                     height={18}
                     className={s.heroImage}
                   />
-                  {feature.label}
+                  <Typography
+                    label={feature.label}
+                    size={TextSize.Small}
+                    fontWeight={FontWeight.Medium}
+                    color={TextColor.Primary}
+                  />
                 </span>
               ))}
             </div>
@@ -275,7 +295,12 @@ const HomePage = () => {
 
         {/* ---------- KEY FEATURES ---------- */}
         <section className={s.keyFeatures}>
-          <p className={s.mainTitle}>Explore Our Key Features</p>
+          <Typography
+            label="Explore Our Key Features"
+            size={TextSize.DoubleExtraLarge}
+            fontWeight={FontWeight.Light}
+            color={TextColor.Primary}
+          />
           <div className={s.cards}>
             {KEY_FEATURES.map((item) => (
               <article key={item.label} className={s.card}>
@@ -287,8 +312,13 @@ const HomePage = () => {
                   className={s.cardImage}
                   loading="lazy"
                 />
-                <h3 className={s.subTitle}>{item.label}</h3>
-                <p className={s.textLead}>{item.description}</p>
+                <Typography label={item.label} fontWeight={FontWeight.Bold} />
+                <Typography
+                  label={item.description}
+                  fontWeight={FontWeight.Light}
+                  color={TextColor.Secondary}
+                  size={TextSize.Small}
+                />
               </article>
             ))}
           </div>
@@ -298,13 +328,31 @@ const HomePage = () => {
         {OVERVIEWS.map((overview, index) => (
           <section key={index} className={s.overview}>
             <div className={s.content}>
-              <p className={s.mainTitle}>{overview.title}</p>
-              <p className={s.textLead}>{overview.description}</p>
+              <Typography
+                label={overview.title}
+                fontWeight={FontWeight.Light}
+                size={TextSize.DoubleExtraLarge}
+                color={TextColor.Primary}
+              />
+
+              <Typography
+                label={overview.description}
+                fontWeight={FontWeight.Light}
+                color={TextColor.Secondary}
+              />
               <div className={s.overviewItems}>
                 {overview.features.map(({ title, description }, i) => (
                   <article key={i} className={s.overviewItem}>
-                    <h3 className={s.subTitle}>{title}</h3>
-                    <p className={s.textLead}>{description}</p>
+                    <Typography
+                      label={title}
+                      fontWeight={FontWeight.Bold}
+                      size={TextSize.Medium}
+                    />
+                    <Typography
+                      label={description}
+                      fontWeight={FontWeight.Light}
+                      color={TextColor.Secondary}
+                    />
                   </article>
                 ))}
               </div>
@@ -338,7 +386,12 @@ const HomePage = () => {
                     loading="lazy"
                   />
                 </div>
-                <h3 className={s.subTitle}>{feature.label}</h3>
+
+                <Typography
+                  label={feature.label}
+                  fontWeight={FontWeight.Bold}
+                  size={TextSize.Medium}
+                />
               </div>
             ))}
           </div>
@@ -355,8 +408,18 @@ const HomePage = () => {
             loading="lazy"
           />
           <div>
-            <p className={s.mainTitle}>{WHY_US.title}</p>
-            <p className={s.textLead}>{WHY_US.description}</p>
+            <Typography
+              label={WHY_US.title}
+              fontWeight={FontWeight.Light}
+              color={TextColor.Primary}
+              size={TextSize.DoubleExtraLarge}
+            />
+            <Typography
+              label={WHY_US.description}
+              fontWeight={FontWeight.Light}
+              color={TextColor.Secondary}
+              size={TextSize.Medium}
+            />
           </div>
         </section>
 
