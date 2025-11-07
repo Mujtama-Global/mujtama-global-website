@@ -1,5 +1,5 @@
 @import "../../base/colors";
-
+@import "../../base/responsive";
 // Sizes
 
 .textLg {
@@ -7,6 +7,9 @@
 }
 .text2xl {
   font-size: 62px;
+  @media (max-width: $width-breakpoint-md) {
+    font-size: 32px;
+  }
 }
 .textXl {
   font-size: 20px;
@@ -19,7 +22,6 @@
 }
 .textSm {
   font-size: 12px;
-  line-height: 1.5em;
 }
 
 // Colors
