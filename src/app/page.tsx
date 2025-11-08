@@ -285,7 +285,7 @@ const HomePage = () => {
               width={380}
               height={480}
               alt="Mujtama Global app hero image showing Islamic features"
-              className={s.heroImage}
+              className={s.heroImageMain}
               priority
             />
           </div>
@@ -330,8 +330,8 @@ const HomePage = () => {
             <div className={s.content}>
               <Typography
                 label={overview.title}
-                fontWeight={FontWeight.Light}
                 size={TextSize.DoubleExtraLarge}
+                fontWeight={FontWeight.Light}
                 color={TextColor.Primary}
               />
 
@@ -373,7 +373,12 @@ const HomePage = () => {
 
         {/* ---------- UPCOMING FEATURES ---------- */}
         <section className={s.upcomingFeatures}>
-          <p className={s.mainTitle}>Upcoming Features</p>
+          <Typography
+            label="Upcoming Features"
+            size={TextSize.DoubleExtraLarge}
+            fontWeight={FontWeight.Light}
+            color={TextColor.Primary}
+          />
           <div className={s.features}>
             {UPCOMING_FEATURES.features.map((feature) => (
               <div key={feature.label} className={s.feature}>

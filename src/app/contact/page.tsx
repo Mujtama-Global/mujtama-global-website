@@ -56,9 +56,9 @@ const ContactUsPage = () => {
         </form>
         <Typography
           label="Or you can contact us via email at support@mujtamaglobal.com"
-          color={TextColor.Light}
           fontWeight={FontWeight.Light}
           size={TextSize.Small}
+          style={{ marginTop: 16 }}
         />
       </div>
     </div>

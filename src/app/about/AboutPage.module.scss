@@ -1,6 +1,5 @@
 .root {
-  position: relative;
-  min-height: calc(100vh - 72.5px);
+  min-height: 100vh;
   background-image: url("https://images.pexels.com/photos/20749290/pexels-photo-20749290.jpeg");
   background-size: cover;
   background-position: center;
@@ -26,13 +25,20 @@
 
 /* 🔹 Text Content */
 .content {
-  position: relative;
+  min-height: 100%;
+  display: flex;
+  text-align: center;
   z-index: 2;
   max-width: 800px;
-  display: flex;
+
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 1.2rem;
   color: #fff;
+  @media screen and (max-width: 420px) {
+    padding-top: 60px;
+  }
 }
 
 /* 🔹 Responsive */

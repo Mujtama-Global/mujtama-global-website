@@ -1,17 +1,23 @@
 // style the contact page
 @import "../../DS/base/colors";
 .root {
-  min-height: calc(100vh - 72.5px);
+  min-height: calc(100vh);
   display: flex;
+  padding: 5%;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 420px) {
+    padding-top: 80px;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: flex-start;
+  }
   .contactForm {
     border: 1px solid $light-border;
     padding: 32px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: 32px;
     justify-content: space-between;
 
     .contactInfo {
@@ -21,10 +27,13 @@
       margin-top: 32px;
     }
   }
-  padding: 5%;
+
   .nameInput {
     display: flex;
     gap: 10px;
+    @media screen and (max-width: 420px) {
+      display: block;
+    }
   }
   input {
     display: block;
